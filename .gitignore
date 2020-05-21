@@ -9,3 +9,6 @@ output
 .spago
 .purs-repl
 .psc-ide-port
+index.js
+js-app.exe
+libquickjs.dll

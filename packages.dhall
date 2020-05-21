@@ -123,19 +123,7 @@ let upstream =
 let overrides = {=}
 
 let additions = {
-    seija = {
-        dependencies = [ "colors"
-  , "console"
-  , "effect"
-  , "maybe"
-  , "options"
-  , "sized-vectors"
-  , "profunctor-lenses"
-  , "psci-support"
-  , "argonaut-core"],
-        repo = "https://github.com/ydzz/purescript-seija.git",
-        version = "*"
-     }
+    seija = ./../purescript-seija/spago.dhall as Location
 }
 
 in  upstream // overrides // additions
