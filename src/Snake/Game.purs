@@ -3,13 +3,14 @@ module Snake.Game where
 import Data.Maybe (Maybe(..))
 import Effect (Effect)
 import Seija.App (class IGame, GameM)
-import Seija.Asset.Types (Font, Texture)
+import Seija.Asset.Types (Font, SpriteSheet, Texture)
 
 type GameRun = GameM SnakeGame Effect
 
 type GameAssets = {
     menuBG::Texture,
-    font::Font
+    font::Font,
+    sheet::SpriteSheet
 }
 
 newtype SnakeGame = SnakeGame {

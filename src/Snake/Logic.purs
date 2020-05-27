@@ -10,6 +10,23 @@ instance defaultRootGameData :: Default RootGameData where
 
 data GameRootEvent = UpdateGameState Int | QuitGame
 
-isUpdateGameState :: GameRootEvent -> Boolean
-isUpdateGameState (UpdateGameState _) = true
-isUpdateGameState ev                  = false
+
+
+newtype GameSceneData = GameSceneData {
+  snakeList::Array SnakeNode,
+  curDir::Int
+}
+
+data GameSceneEvent = Tick
+
+instance defaultGameSceneData :: Default GameSceneData where
+  default = GameSceneData { snakeList:[],curDir:0 }
+
+onSceneUpdate::GameSceneData -> GameSceneEvent -> GameSceneData
+onSceneUpdate d Tick = d
+
+type SnakeNode = {
+  key::Int,
+  x::Int,
+  y::Int
+}

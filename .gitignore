@@ -11,4 +11,5 @@ output
 .psc-ide-port
 index.js
 js-app.exe
+js-app
 libquickjs.dll
